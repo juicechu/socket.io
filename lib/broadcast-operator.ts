@@ -15,6 +15,7 @@ export class BroadcastOperator<EmitEvents extends EventsMap>
     private readonly adapter: Adapter,
     private readonly rooms: Set<Room> = new Set<Room>(),
     private readonly exceptRooms: Set<Room> = new Set<Room>(),
+    private readonly mergeRooms: Set<Room> = new Set<Room>(),
     private readonly flags: BroadcastFlags = {}
   ) {}
 
@@ -36,6 +37,7 @@ export class BroadcastOperator<EmitEvents extends EventsMap>
       this.adapter,
       rooms,
       this.exceptRooms,
+      this.mergeRooms,
       this.flags
     );
   }
@@ -69,9 +71,34 @@ export class BroadcastOperator<EmitEvents extends EventsMap>
       this.adapter,
       this.rooms,
       exceptRooms,
+      this.mergeRooms,
       this.flags
     );
   }
+
+  /**
+   * Merge a room when emitting.
+   *
+   * @param room
+   * @return a new BroadcastOperator instance
+   * @public
+   */
+  public merge(room: Room | Room[]): BroadcastOperator<EmitEvents> {
+    const mergeRooms = new Set(this.mergeRooms);
+    if (Array.isArray(room)) {
+      room.forEach((r) => mergeRooms.add(r));
+    } else {
+      mergeRooms.add(room);
+    }
+    return new BroadcastOperator(
+      this.adapter,
+      this.rooms,
+      this.exceptRooms,
+      mergeRooms,
+      this.flags
+    );
+  }
+
 
   /**
    * Sets the compress flag.
@@ -86,6 +113,7 @@ export class BroadcastOperator<EmitEvents extends EventsMap>
       this.adapter,
       this.rooms,
       this.exceptRooms,
+      this.mergeRooms,
       flags
     );
   }
@@ -104,6 +132,7 @@ export class BroadcastOperator<EmitEvents extends EventsMap>
       this.adapter,
       this.rooms,
       this.exceptRooms,
+      this.mergeRooms,
       flags
     );
   }
@@ -120,6 +149,7 @@ export class BroadcastOperator<EmitEvents extends EventsMap>
       this.adapter,
       this.rooms,
       this.exceptRooms,
+      this.mergeRooms,
       flags
     );
   }
@@ -152,6 +182,7 @@ export class BroadcastOperator<EmitEvents extends EventsMap>
       rooms: this.rooms,
       except: this.exceptRooms,
       flags: this.flags,
+      merge: this.mergeRooms,
     });
 
     return true;

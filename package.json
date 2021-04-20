@@ -1,6 +1,6 @@
 {
   "name": "socket.io",
-  "version": "4.0.1",
+  "version": "4.0.1-merge-room",
   "description": "node.js realtime framework server",
   "keywords": [
     "realtime",
@@ -33,7 +33,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/socketio/socket.io"
+    "url": "git://github.com/juice/socket.io"
   },
   "scripts": {
     "compile": "rimraf ./dist && tsc",
@@ -52,7 +52,7 @@
     "base64id": "~2.0.0",
     "debug": "~4.3.1",
     "engine.io": "~5.0.0",
-    "socket.io-adapter": "~2.2.0",
+    "socket.io-adapter": "git+https://github.com/juicechu/socket.io-adapter",
     "socket.io-parser": "~4.0.3"
   },
   "devDependencies": {

@@ -721,6 +721,7 @@ export class Socket<
       this.adapter,
       new Set<Room>(),
       new Set<Room>([this.id]),
+      new Set<Room>(),
       flags
     );
   }
