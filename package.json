@@ -1,5 +1,5 @@
 {
-  "name": "socket.io",
+  "name": "@juicefunny/socket.io",
   "version": "4.0.1-merge-room",
   "description": "node.js realtime framework server",
   "keywords": [
@@ -18,10 +18,10 @@
     "!**/*.tsbuildinfo"
   ],
   "directories": {
-    "doc": "docs/",
-    "example": "example/",
-    "lib": "lib/",
-    "test": "test/"
+    "doc": "docs",
+    "example": "examples",
+    "lib": "lib",
+    "test": "test"
   },
   "type": "commonjs",
   "main": "./dist/index.js",
@@ -33,7 +33,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/juice/socket.io"
+    "url": "git://github.com/juice/socket.io.git"
   },
   "scripts": {
     "compile": "rimraf ./dist && tsc",
@@ -53,7 +53,7 @@
     "base64id": "~2.0.0",
     "debug": "~4.3.1",
     "engine.io": "~5.0.0",
-    "socket.io-adapter": "git+https://github.com/juicechu/socket.io-adapter",
+    "socket.io-adapter": "git+https://github.com/juicechu/socket.io-adapter.git",
     "socket.io-parser": "~4.0.3"
   },
   "devDependencies": {
@@ -75,27 +75,20 @@
     "typescript": "^4.1.2"
   },
   "contributors": [
-    {
-      "name": "Guillermo Rauch",
-      "email": "rauchg@gmail.com"
-    },
-    {
-      "name": "Arnout Kazemier",
-      "email": "info@3rd-eden.com"
-    },
-    {
-      "name": "Vladimir Dronnikov",
-      "email": "dronnikov@gmail.com"
-    },
-    {
-      "name": "Einar Otto Stangvik",
-      "email": "einaros@gmail.com"
-    }
+    "Guillermo Rauch <rauchg@gmail.com>",
+    "Arnout Kazemier <info@3rd-eden.com>",
+    "Vladimir Dronnikov <dronnikov@gmail.com>",
+    "Einar Otto Stangvik <einaros@gmail.com>"
   ],
   "engines": {
     "node": ">=10.0.0"
   },
   "tsd": {
     "directory": "test"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/juice/socket.io/issues"
+  },
+  "homepage": "https://github.com/juice/socket.io#readme",
+  "author": "juice"
 }
