@@ -1,6 +1,6 @@
 {
   "name": "@juicefunny/socket.io",
-  "version": "4.0.1-merge-room",
+  "version": "4.0.2-merge-room",
   "description": "node.js realtime framework server",
   "keywords": [
     "realtime",
